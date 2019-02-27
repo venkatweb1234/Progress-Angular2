@@ -1,0 +1,40 @@
+<div class="MainDiv">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <div  *ngFor="let bar of Result.bars; let index=index" class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped active"  id="progressBar1" role="progressbar" [style.width]="(Result.bars[index]+width)+'%'" aria-valuemin="0" aria-valuenow="Result.bars[index]" aria-valuemax="Result.limit">{{Result.bars[index]+width}}%</div>
+  </div>
+  
+  <div class="dropdown">
+    <select  (change)="addEvent($event.target)">
+      <option *ngFor="let bar of Result.bars; let index=index"   [value]="Result.bars[index]">#progress{{index+1}}</option>
+    </select>
+    <input type="button" *ngFor="let button of Result.buttons; let index=index" class="btnsml"  value={{Result.buttons[index]}} (click)="addWidth($event)" />
+  </div>
+  </div>
+  
+  
+  
+
+
+
+
+<!--div class="MainDiv">
+<div *ngFor="let bar of Result.bars; let index=index"> </div>-->
+ <!--<div class="first">
+  <div [ngStyle]="{'width.%':width}" class="second" id="second"><span>{{width}}%</span></div>
+</div><br />-->
+<!--<div class="progress" *ngFor="let bar of Result.bars; let index=index">
+  <div  class="progress-bar progress-bar-striped active" role="progressbar"
+  attr.aria-valuenow="50" aria-valuemin="0" attr.aria-valuemax="100" [style.width]="width + '%'">
+  </div>
+</div>
+
+<div class="dropdown">
+  <select  (change)="open1($event)">
+    <option *ngFor="let bar of Result.bars; let index=index"  value={{Result.bars[index]}} >#progress{{index+1}}</option>
+  </select>
+  <input type="button" *ngFor="let button of Result.buttons; let index=index" class="btnsml"  value={{Result.buttons[index]}} (click)="open($event)" />
+</div>
+</div>
+-->
+
